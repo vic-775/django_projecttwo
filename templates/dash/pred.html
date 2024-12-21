@@ -1,0 +1,51 @@
+{% extends 'partials/base.html' %}
+
+{% block title %}All Predictions{% endblock %}
+
+{% block content %} 
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-8 offset-md-2">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="">Name</th>
+                    <th scope="">Dependants</th>
+                    <th scope="">Applicants Income</th>
+                    <th scope="">Coapplicants Income</th>
+                    <th scope="">Loan Amount</th>
+                    <th scope="">Loan Term</th>
+                    <th scope="">Credit History</th>
+                    <th scope="">Gender</th>
+                    <th scope="">Martial Status</th>
+                    <th scope="">Education Status</th>
+                    <th scope="">Self Employed</th>
+                    <th scope="">Area</th>
+                    <th scope="">Loan Status
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for data in predicted_loans %}
+                  <tr>
+                    <th scope="row">{{ data.name }}</th>
+                    <td>{{ data.dependants }}</td>
+                    <td>{{ data.applicants_income }}</td>
+                    <td>{{ data.coapplicants_income }}</td>
+                    <td>{{ data.loan_amount }}</td>
+                    <td>{{ data.loan_term}}</td>
+                    <td>{{ data.credit_history }}</td>
+                    <td>{{ data.gender }}</td>
+                    <td>{{ data.marital_status }}</td>
+                    <td>{{ data.education_status }}</td>
+                    <td>{{ data.self_employed }}</td>
+                    <td>{{ data.area }}</td>
+                    <td>{{ data.loan_status }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
